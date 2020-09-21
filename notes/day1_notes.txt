@@ -61,6 +61,10 @@ a. class, extends, super Keywords
 b. ES6 module
 c. locally scoped variable (usinf let keyword)
 d. const variable (value/reference doesn't change)
+e. arrow operator/function
+f. spread operator
+g. string template/templated string
+h. static function
 
 Node JS:
 Server Side Framework built at the top of V8 engine

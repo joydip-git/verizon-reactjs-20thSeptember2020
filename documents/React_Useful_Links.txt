@@ -5,8 +5,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prot
 ES6 new features:
 http://es6-features.org/#Constants
 
+Module and formats etc.:
+https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/#:~:text=A%20module%20format%20is%20the%20syntax%20we%20use%20to%20define,certain%20module%20format%20at%20runtime.
+
+JS Execution Context:
+https://medium.com/@happymishra66/execution-context-in-javascript-319dd72e8e2c#:~:text=Execution%20context%20(EC)%20is%20defined,to%20at%20a%20particular%20time.
+
+
+Arrow functions:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
 json schema link:
 http://www.schemastore.org/json/
 
-Module and formats etc.:
-https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/#:~:text=A%20module%20format%20is%20the%20syntax%20we%20use%20to%20define,certain%20module%20format%20at%20runtime.
