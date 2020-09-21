@@ -40,5 +40,21 @@ anil object   joydip object
 
 any object that you create or gets created in JS runtime always gets linked to a top level prototype object, i.e., Object prototype
 
+1. preparation step
+var contextObj = {
+	x:20,
+        iterate:{
+                fn:function () {
+    		for (var i = 0; i < 2; i++) {
+        	x = 20;
+        	console.log(x)
+    		}
+		args:null,
+		locals:1
+		i:undefined
+	}
+}
+2. execution step window
+
 
 
