@@ -56,5 +56,46 @@ var contextObj = {
 }
 2. execution step window
 
+New features in JS:(2015)
+a. class, extends, super Keywords
+b. ES6 module
+c. locally scoped variable (usinf let keyword)
+d. const variable (value/reference doesn't change)
+
+Node JS:
+Server Side Framework built at the top of V8 engine
+fs, path, ....
+
+modules
+
+module formats:
+Common JS format (Default format for defining module in Node JS environment)
+AMD (Asynchronous Module Definition)
+IIFE (Immediately Invocable Function Expression - pronounced as IIFY)
+ES6 module (export, import)
+
+module loaders
+System JS
+Require JS
+
+
+Module {
+  id: '.',
+  path: 'E:\\verizon-reactjs-20thSeptember2020\\codes\\day-1\\js-prototype-inheritance\\src',
+  exports: {},
+  parent: null,
+  filename: 'E:\\verizon-reactjs-20thSeptember2020\\codes\\day-1\\js-prototype-inheritance\\src\\index.js',
+  loaded: false,
+  children: [],
+  paths: [
+    'E:\\verizon-reactjs-20thSeptember2020\\codes\\day-1\\js-prototype-inheritance\\src\\node_modules',
+    'E:\\verizon-reactjs-20thSeptember2020\\codes\\day-1\\js-prototype-inheritance\\node_modules',
+    'E:\\verizon-reactjs-20thSeptember2020\\codes\\day-1\\node_modules',
+    'E:\\verizon-reactjs-20thSeptember2020\\codes\\node_modules',
+    'E:\\verizon-reactjs-20thSeptember2020\\node_modules',
+    'E:\\node_modules'
+  ]
+}
+
 
 
