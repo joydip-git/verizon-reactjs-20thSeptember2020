@@ -1,0 +1,12 @@
+JavaScript:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
+ES6 new features:
+http://es6-features.org/#Constants
+
+json schema link:
+http://www.schemastore.org/json/
+
+Module and formats etc.:
+https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/#:~:text=A%20module%20format%20is%20the%20syntax%20we%20use%20to%20define,certain%20module%20format%20at%20runtime.

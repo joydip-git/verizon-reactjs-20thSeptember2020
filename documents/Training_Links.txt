@@ -1,0 +1,15 @@
+https://labs.alchemycloud.co.in
+Username: alchemycloud\user1
+Password: Alchemycloud@123
+
+machine credentials: 
+username: .\test
+password: pass@word1
+
+github:
+https://github.com/joydip-git/verizon-ReactJS-7thSeptember
+
+webex link:
+https://verizontwo.webex.com/verizontwo/j.php?MTID=m69cd86498350cfb23bf19edc5da7946a (map)
+
+
