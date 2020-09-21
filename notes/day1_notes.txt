@@ -1,0 +1,44 @@
+1. JavaScript - prototype based programming
+2. new features in JS
+
+3. React JS:
+a. create simple app without any tool
+b. create simple app with the help of create-react-app
+
+4. React JS Concepts
+5. Redux and React with Redux
+6. React Hooks
+
+7. case study
+
+Artifacts:
+1. Editor: Visual Studio Code
+2. Framework: Node JS
+3. package tool: NPM
+
+Objects in JS:
+a. Object Literal Syntax
+b. constructor function
+c. Object.create()
+d. class keyword
+
+Prototype:
+for every constructor function JS creates an object. 
+Known as Prototype object of that funtcion.
+
+every instance (object) created based on that ctor func call, will be linked to the prototype object of the function. (via property: __proto__)
+
+you have two ways to access the prototype object:
+a. via the object created by calling that ctor function (via __proto__ property)
+b. by the ctor function itself (via prototype property of the ctor function itself)
+
+ctor function       prototype
+function Object ==> object prototype
+function person ==> person prototype
+
+anil object   joydip object
+
+any object that you create or gets created in JS runtime always gets linked to a top level prototype object, i.e., Object prototype
+
+
+
