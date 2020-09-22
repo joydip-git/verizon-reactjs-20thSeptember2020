@@ -1,28 +1,30 @@
 import React from 'react'
+import Another from './Another';
 import './App.css'
+import Message from './Message'
 
+// const messageElement = Message({ data: 'hello react', value: 20 })
+// console.log(messageElement)
 const App = () => {
-    const message = 'hello world';
-    // const divStyle = {
-    //     backgroundColor: 'blue',
-    //     fontSize: 'medium'
-    // };
+    let message = 'hello everyone';
+    let changeMessage = function (newMessage) {
+        console.log('çalled');
+        console.log(newMessage);
+        message = newMessage;
+        console.log(message)
+    }
+    //changeMessage = changeMessage.bind(this);
     return (
-        <div id='messageDiv'
-            className='divStyle'>
-            <span id='messageSpan' className='spanStyle'>
-                <span style={{ textAlign: "center" }}>
-                    {message}
-                </span>
-            </span>
+        <div>
+            <button onClick={() => changeMessage('button clicked')}>Change Message</button>
+            <br />
+            <Message
+                data={message}
+                value={30}
+                changeFn={changeMessage} />
+            <br />
+            <Another message={message} />
         </div>
     );
 }
 export default App;
-//module.exports = App;
-//import X from './App'
-// const design = X();
-
-//module.exports = { App };
-//import obj from './App'
-// const design = obj.App();

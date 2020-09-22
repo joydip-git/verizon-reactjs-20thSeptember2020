@@ -124,3 +124,13 @@ export function App() {
         </div>
     );
 }
+
+
+
+//module.exports = App;
+//import X from './App'
+// const design = X();
+
+//module.exports = { App };
+//import obj from './App'
+// const design = obj.App();
