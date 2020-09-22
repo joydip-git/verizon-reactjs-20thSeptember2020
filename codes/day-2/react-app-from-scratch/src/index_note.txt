@@ -1,0 +1,28 @@
+// var AddFn = require('./App');
+// var { App, SubFn } = require('./App')
+//module.exports={App}
+import AddFn, { App, SubFn } from './App'
+import ReactDOM from 'react-dom'
+
+const design = App();
+const root = document.getElementById('appDesign');
+ReactDOM.render(design, root);
+
+
+/**
+ * <div id='appDesign'>
+    <div id='messageDiv' style='background-color:blue'>
+ *      <span id='messageSpan' class='spanStyle'>Hello world</span>
+ *  </div>
+    </div>
+ *
+ */
+
+// const anil = {
+//     firstName: 'anil',
+//     lastName: 'gupta'
+// };
+// const { firstName } = anil;
+// console.log(firstName);
+
+

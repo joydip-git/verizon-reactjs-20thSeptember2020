@@ -1,0 +1,8 @@
+.spanStyle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid red;
+}
+.divStyle{
+    background-color: blue;
+    font-size: medium;
+}

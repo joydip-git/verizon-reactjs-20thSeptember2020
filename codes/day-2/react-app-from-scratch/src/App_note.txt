@@ -1,0 +1,126 @@
+// var X = require('react');
+import React from 'react'
+import './App.css'
+
+const AddFn = (x, y) => (x + y);
+export default AddFn;
+//module.exports = AddFn;
+
+export function SubFn(a, b) { return (a - b); }
+
+//module.exports={ App, SubFn };
+
+function App() {
+    const show = false;
+    const message = 'hello world';
+    const divStyle = {
+        backgroundColor: 'blue',
+        fontSize: 'medium'
+    };
+
+    // const span = React.createElement(
+    //     'span',
+    //     {
+    //         id: 'messageSpan',
+    //         className: 'spanStyle'
+    //     },
+    //     message);
+
+    // const container = React.createElement(
+    //     'div',
+    //     {
+    //         id: 'messageDiv',
+    //         style: {divStyle}
+    //     },
+    //     span);
+    // const container = (
+    //     <div id='messageDiv'
+    //         style={divStyle}>
+    //         <span id='messageSpan' className='spanStyle'>
+    //             {message}
+    //         </span>
+    //     </div>
+    // );
+
+    //return container;
+
+    //JSX: JavaScript XML
+    // const design = <span>loading...</span>
+    // if (show) {
+    //     design = (
+    //         <div id='messageDiv'
+    //             style={divStyle}>
+    //             <span id='messageSpan' className='spanStyle'>
+    //                 {message}
+    //             </span>
+    //         </div>
+    //     );
+    // }
+    // return design;
+    return (
+        show ? (<div id='messageDiv'
+            style={divStyle}>
+            <span id='messageSpan' className='spanStyle'>
+                {message}
+            </span>
+        </div>) :
+            <span>loading....</span>
+    );
+}
+
+export default App;
+
+/**
+ * {
+ *   type:'div',
+ *   key:null,
+ *   ref:null,
+ *   props:{
+ *    children:[{
+ *          type:'span',
+ *          key:null,
+ *          ref:null,
+ *          props:{
+ *          children:'Hello world'
+ *          }
+ *      }
+ *    ]
+ *   }
+ * }
+ */
+
+
+//CSS module
+
+import React from 'react'
+import allStyles from './App.css'
+/**
+ * allStyles = {
+ *   divStyle:{
+ *     backgroundColor: "blue",
+       fontSize: "medium"
+    },
+    spanStyle:{
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        border: "2px solid red"
+    }
+ * }
+ */
+
+export function App() {
+    const message = 'hello world';
+    // const divStyle = {
+    //     backgroundColor: 'blue',
+    //     fontSize: 'medium'
+    // };
+    return (
+        <div id='messageDiv'
+            className={allStyles.divStyle}>
+            <span id='messageSpan' className={allStyles.spanStyle}>
+                <span style={{ textAlign: "center" }}>
+                    {message}
+                </span>
+            </span>
+        </div>
+    );
+}

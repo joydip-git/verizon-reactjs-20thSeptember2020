@@ -1,0 +1,41 @@
+client side framework
+server side framework
+React JS:
+Is a JS library
+NOT a framework, like angular
+
+Language: JavaScript/TypeScript/NativeScript
+
+landing page/placeholder page: index.html
+code: 
+	multiple JS/TS/NS files ---> to create several components
+	master JS file (index.js)--> render these components in the placeholder page
+
+libraries: (packages)
+a. React: react, react-dom
+
+
+transpilation:
+	JS Code and used lots of ES6 features and JSX code ===> older version of JS
+	TS code and used lots of ES6 features and JSX cod ===> older version of JS
+compiltaion
+
+b. Transpiler & compiler: babel
+   A. Core Babel package: @babel/core
+   B. Transformers:
+   1. Convert ES6 features to old styles: individual plugins/collection (array) of plugins [preset]
+      preset: @babel/preset-env
+   2. convert JSX code into vanilla JS: individual plugins/collection (array) of plugins [preset]
+      preset: @babel/preset-react
+   C. CLI: @babel/cli
+
+download the packages 
+then create a .babelrc file at the root of your applictaion directory
+configure the presets in the .babelrc file
+      
+
+
+
+	
+
+
