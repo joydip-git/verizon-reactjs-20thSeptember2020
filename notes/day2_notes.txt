@@ -32,7 +32,20 @@ b. Transpiler & compiler: babel
 download the packages 
 then create a .babelrc file at the root of your applictaion directory
 configure the presets in the .babelrc file
-      
+
+"scripts":{
+  "start":"",
+  "build":""
+}
+ 
+npm run <script-key> 
+npm start
+npm run build
+
+angular-cli
+ng serve: (webpack-dev-server)-->dev server
+          serve --> production level server simulator
+	  http-server
 
 
 
