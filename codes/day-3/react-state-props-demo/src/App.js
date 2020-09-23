@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Another from './Another';
+import Message from './Message';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.otherMessage = 'other message';
+    this.state = {
+      message: 'hello everyone',
+      value: 20,
+      show: false,
+      product: {
+        name: 'dell laptop',
+        id: 1,
+        price: 100000
+      }
+    }
+    // this.changeMessageHandler = this.changeMessageHandler.bind(this);
+  }
+  //otherMessage = 'other message';
+
+  changeMessageHandler = (event) => {
+    console.log(event.target.value)
+  }
+
+  render() {
+    return (
+      <div>
+        App component element
+        <br />
+        <Message
+          message={this.state.message}
+          changeMessageFn={this.changeMessageHandler}
+        />
+        <br />
+        <Another message={this.state.message} handler={this.changeMessageHandler} />
+      </div>
+    );
+  }
 }
 
 export default App;

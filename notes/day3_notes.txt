@@ -1,1 +1,25 @@
-create-react-app
+>npm i create-react-app -g
+>create-react-app react-state-props-demo
+
+>npx create-react-app react-state-props-demo
+
+component:
+must return  react element
+
+class component: (stateful component)
+a. render function (comes from component base class) must have the return statement to return react element
+b. in order to get the element, React JS creates instance of the class component first and then invokes render function
+NOTE: there is a Component OBJECT here. this keyword is must to access anything inside the component (data member of functional member). this refers to the current instance (ie. the current instance is the context)
+c. you can avail state in class component
+d. you can avail lifecycle methods in class component
+
+functional component: (Presentational/stateless component)
+a. it's a function itself...so just have a return statement to return react element
+b. just calling the function returns the element within
+NOTE: there is no question of any Component OBJECT here. Hence 'this' keyword has no meaning (i.e. context)
+c. you can NOT avail state in class component
+d. you can NOT avail lifecycle methods in class component
+
+
+
+
