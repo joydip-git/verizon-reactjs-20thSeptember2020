@@ -36,6 +36,7 @@ b. updation
 	b. shouldComponentUpdate() gets invoked....
 	c. render
 	d. getSnapshotBeforeUpdate
+	Note: child getSnapshotBeforeUpdate will be invoked
 	e. componentDidUpdate
 	
 c. destruction
