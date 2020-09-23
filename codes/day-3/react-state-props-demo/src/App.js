@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import './App.css'
 import Another from './Another';
 import Message from './Message';
-
+//new App({someData:'React'})
 class App extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.otherMessage = 'other message';
     this.state = {
@@ -21,9 +21,43 @@ class App extends Component {
   }
   //otherMessage = 'other message';
 
-  changeMessageHandler = (event) => {
-    console.log(event.target.value)
+  changeMessageHandler = (newMessage) => {
+    let newStateObj = {
+      message: newMessage
+    }
+    //this.setState(newStateObj);
+    this.setState(
+      newStateObj,
+      () => console.log(this.state.message)
+    );
+    // setTimeout(() => console.log(this.state.message), 2000);
   }
+  changeValueHandler = () => {
+    //this.state.value++;
+    this.setState(
+      (oldState) => {
+        console.log(oldState);
+        let newState = {
+          value: oldState.value + 1
+        }
+        return newState;
+      },
+      () => console.log(this.state)
+    );
+    /**
+     * this.setState(
+      (oldState,props) => {
+        console.log(oldState);
+        let newState = {
+          value: oldState.value + props.someData
+        }
+        return newState;
+      },
+      () => console.log(this.state)
+    );
+     */
+  }
+
 
   render() {
     return (
@@ -35,7 +69,7 @@ class App extends Component {
           changeMessageFn={this.changeMessageHandler}
         />
         <br />
-        <Another message={this.state.message} handler={this.changeMessageHandler} />
+        <Another message={this.state.value} handler={this.changeValueHandler} />
       </div>
     );
   }
