@@ -11,11 +11,14 @@ class App extends Component {
     this.state = {
       message: 'hello everyone',
       value: 20,
-      show: false,
+      show: true,
       product: {
         name: 'dell laptop',
         id: 1,
         price: 100000
+      },
+      data: {
+        name: 'anil'
       }
     }
     console.log('[App] created...')
@@ -28,6 +31,10 @@ class App extends Component {
     return null;
   }
   changeMessageHandler = (newMessage) => {
+    
+    this.setState({
+      data: { name: 'sunil' }
+    })
     let newStateObj = {
       message: newMessage
     }
@@ -71,12 +78,20 @@ class App extends Component {
     console.log(this.props)
     console.log(this.state)
     return true;
-}
+  }
+  changeShowHandler = () => {
+    this.setState((ps) => {
+      return {
+        show: !ps.show
+      }
+    })
+  }
   render() {
     console.log('[App] rendered')
     return (
       <div>
         App component element
+        <button onClick={this.changeShowHandler}>Show Child</button>
         <br />
         <Message
           message={this.state.message}
@@ -85,13 +100,31 @@ class App extends Component {
         <br />
         <Another value={this.state.value} handler={this.changeValueHandler} />
         <br />
-        <Child data={this.state.value} />
+        { this.state.show &&
+          <Child data={this.state.value} />
+        }
       </div>
     );
   }
-
+  getSnapshotBeforeUpdate(currentProps, currentState) {
+    console.log('[App] getSnapshotBeforeUpdate')
+    return 'snapshot App data';
+  }
+  componentDidUpdate(prevProps, pervState, snapshot) {
+    console.log('[App] componentDidUpdate')
+    console.log(snapshot)
+  }
   componentDidMount() {
     console.log('[App] mounted...')
+  }
+  componentDidCatch(error, info) {
+    console.log('[App] error')
+    console.log('error and info is as follows...')
+    console.log(error)
+    console.log(info)
+  }
+  static getDerivedStateFromError(error) {
+    console.log('[App] getDerivedStateFromError')
   }
 }
 

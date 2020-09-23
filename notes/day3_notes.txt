@@ -4,7 +4,7 @@
 >npx create-react-app react-state-props-demo
 
 component:
-must return  react element
+returns react element
 
 class component: (stateful component)
 a. render function (comes from component base class) must have the return statement to return react element
@@ -25,6 +25,15 @@ LifeCycle events and hooks (methods):
 stages:
 a. creation and mounting
 	a. constructor is executed first when the object of class component is created
+	constructor(props)
+        super(props)
+	//this.state={}
+	//this.handler = this.handler.bind(this)
+
+	handler=()=>{}
+	state = {
+	}
+	
 	b. getDerivedStateFromProps executed: use it to set the state based on the received props value (from parent)
 	c. render method gets invoked...that creates the React element for the very first time..thus this element becomes part of the VDOM
         NOTE: all child compoments also will be rendered...
@@ -33,14 +42,22 @@ a. creation and mounting
 b. updation
 	Note: ctor---NOT called
 	a. getDerivedStateFromProps executed: use it to set the state based on the received props value (from parent)
-	b. shouldComponentUpdate() gets invoked....
-	c. render
+	b. shouldComponentUpdate(newProps) gets invoked....
+	c. render. Should return
+		1. React elements
+		2. Arrays and fragments
+		3. Portals
+		4. string/numbers: text node
+		5. boolean value: diplays nothing
+	Note: it should be a ure function
+
 	d. getSnapshotBeforeUpdate
 	Note: child getSnapshotBeforeUpdate will be invoked
 	e. componentDidUpdate
 	
 c. destruction
-d. error
+d. error:
+   a. com
 
 
 
