@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './App.css'
 import Another from './Another';
 import Message from './Message';
-//new App({someData:'React'})
+import Child from './Child';
+
 class App extends Component {
   constructor(props) {
     super();
@@ -17,10 +18,15 @@ class App extends Component {
         price: 100000
       }
     }
+    console.log('[App] created...')
     // this.changeMessageHandler = this.changeMessageHandler.bind(this);
   }
   //otherMessage = 'other message';
 
+  static getDerivedStateFromProps(props, oldState) {
+    console.log('[App] getDerivedStateFromProps')
+    return null;
+  }
   changeMessageHandler = (newMessage) => {
     let newStateObj = {
       message: newMessage
@@ -58,8 +64,16 @@ class App extends Component {
      */
   }
 
-
+  shouldComponentUpdate(newProps, currentState) {
+    console.log('[App] shouldComponentUpdate called..')
+    console.log('new props, old props and current state as follows...')
+    console.log(newProps)
+    console.log(this.props)
+    console.log(this.state)
+    return true;
+}
   render() {
+    console.log('[App] rendered')
     return (
       <div>
         App component element
@@ -69,9 +83,15 @@ class App extends Component {
           changeMessageFn={this.changeMessageHandler}
         />
         <br />
-        <Another message={this.state.value} handler={this.changeValueHandler} />
+        <Another value={this.state.value} handler={this.changeValueHandler} />
+        <br />
+        <Child data={this.state.value} />
       </div>
     );
+  }
+
+  componentDidMount() {
+    console.log('[App] mounted...')
   }
 }
 

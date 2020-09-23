@@ -20,6 +20,28 @@ NOTE: there is no question of any Component OBJECT here. Hence 'this' keyword ha
 c. you can NOT avail state in class component
 d. you can NOT avail lifecycle methods in class component
 
+LifeCycle events and hooks (methods):
+
+stages:
+a. creation and mounting
+	a. constructor is executed first when the object of class component is created
+	b. getDerivedStateFromProps executed: use it to set the state based on the received props value (from parent)
+	c. render method gets invoked...that creates the React element for the very first time..thus this element becomes part of the VDOM
+        NOTE: all child compoments also will be rendered...
+	d. componentDidMount() gets invoked...that places the component element in the Actual DOM
+
+b. updation
+	Note: ctor---NOT called
+	a. getDerivedStateFromProps executed: use it to set the state based on the received props value (from parent)
+	b. shouldComponentUpdate() gets invoked....
+	c. render
+	d. getSnapshotBeforeUpdate
+	e. componentDidUpdate
+	
+c. destruction
+d. error
+
+
 
 
 

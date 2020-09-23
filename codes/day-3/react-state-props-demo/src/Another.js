@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const Another = (props) => {
+    console.log('[Another] rendered...')
     return (
         <div>
             Another...
             <br />
-            {props.message}
-            <br/>
+            {props.value}
+            <br />
             <button onClick={props.handler}>
                 Click
             </button>
@@ -14,4 +15,5 @@ const Another = (props) => {
     );
 }
 
-export default Another;
+
+export default memo(Another);

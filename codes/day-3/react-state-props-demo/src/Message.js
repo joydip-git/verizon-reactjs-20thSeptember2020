@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Message = (props) => {
-    // const changeMessage = (arg) => {
-    //     props.changeMessageFn(arg.target.value);
-    // }
+    console.log('[Message] rendered...')
     return (
         <div>
             Message: &nbsp;
