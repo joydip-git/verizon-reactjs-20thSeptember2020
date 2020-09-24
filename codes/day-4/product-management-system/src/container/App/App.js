@@ -1,9 +1,11 @@
 import React from 'react';
+import ProductContainer from '../Product/ProductContainer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <ProductContainer />
     </div>
   );
 }
