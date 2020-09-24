@@ -22,9 +22,12 @@ export class ProductContainer extends Component {
     deleteProductHandler = (productId) => {
         deleteProduct(productId)
             .then(resp => {
-                if (resp.statusText === 'OK') {
-                    this.fetchProducts();
-                }
+                // if (resp.statusText === 'OK') {
+                //     this.fetchProducts();
+                // }
+                this.setState({
+                    products: resp.data.data
+                })
             }) //{message:'', data:[]}
             .catch(e => console.log(e));
     }

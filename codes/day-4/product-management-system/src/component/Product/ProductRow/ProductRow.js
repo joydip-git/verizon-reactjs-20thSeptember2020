@@ -6,14 +6,17 @@ function ProductRow({ product, remove }) {
     return (
         <tr>
             <td>
-                <div className='img-responsive'>
-                    <img
-                        src={product.imageUrl}
-                        alt='NA'
-                        title={product.productName}
-                        className='imageStyle'
-                    />
-                </div>
+                <a href="/products/{product.productId}">
+                    <div className='img-responsive'>
+
+                        <img
+                            src={product.imageUrl}
+                            alt='NA'
+                            title={product.productName}
+                            className='imageStyle'
+                        />
+                    </div>
+                </a>
             </td>
             <td>{product.productName}</td>
             <td>{product.productCode}</td>
@@ -28,7 +31,7 @@ function ProductRow({ product, remove }) {
                     onClick={() => remove(product.productId)}>Delete</button>
             </td>
         </tr>
-    )
+    );
 }
 
 ProductRow.propTypes = {
