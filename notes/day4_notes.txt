@@ -1,0 +1,4 @@
+npm i create-react-app -g
+create-react-app <app-name>
+
+npx create-react-app <app-name>
