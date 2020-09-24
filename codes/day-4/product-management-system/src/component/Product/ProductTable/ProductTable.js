@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ProductRow from '../ProductRow/ProductRow';
 
-function ProductTable({ productList }) {
+function ProductTable({ productList, removeProduct }) {
     return (
         <div className='table-responsive'>
             <table className='table'>
@@ -22,7 +22,7 @@ function ProductTable({ productList }) {
                         productList.map(
                             (p) => {
                                 return <ProductRow key={p.productId}
-                                    product={p} />
+                                    product={p} remove={removeProduct} />
                             }
                         )
                     }
@@ -34,7 +34,8 @@ function ProductTable({ productList }) {
 }
 
 ProductTable.propTypes = {
-    productList: PropTypes.array.isRequired
+    productList: PropTypes.array.isRequired,
+    removeProduct: PropTypes.func.isRequired
 }
 
 export default ProductTable

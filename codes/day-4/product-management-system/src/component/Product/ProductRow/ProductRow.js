@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './ProductRow.css'
 
-function ProductRow({ product }) {
+function ProductRow({ product, remove }) {
     return (
         <tr>
             <td>
@@ -22,14 +23,17 @@ function ProductRow({ product }) {
                 <button className='btn btn-primary'>Update</button>
             </td>
             <td>
-                <button className='btn btn-danger'>Delete</button>
+                <button
+                    className='btn btn-danger'
+                    onClick={() => remove(product.productId)}>Delete</button>
             </td>
         </tr>
     )
 }
 
 ProductRow.propTypes = {
-    product: PropTypes.object.isRequired
+    product: PropTypes.object.isRequired,
+    remove: PropTypes.func.isRequired
 }
 
 export default ProductRow

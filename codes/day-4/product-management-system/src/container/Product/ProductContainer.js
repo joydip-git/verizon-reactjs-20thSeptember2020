@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ProductTable from '../../component/Product/ProductTable/ProductTable'
-import { getProducts } from '../../service/ProdudctService'
+import { deleteProduct, getProducts } from '../../service/ProdudctService'
 import './ProductContainer.css'
 
 export class ProductContainer extends Component {
@@ -8,7 +8,7 @@ export class ProductContainer extends Component {
         products: null,
         loaded: false
     }
-    componentDidMount() {
+    fetchProducts = () => {
         getProducts()
             .then(
                 resp => {
@@ -18,6 +18,19 @@ export class ProductContainer extends Component {
                     })
                 })
             .catch(e => console.log(e))
+    }
+    deleteProductHandler = (productId) => {
+        deleteProduct(productId)
+            .then(resp => {
+                if (resp.statusText === 'OK') {
+                    this.fetchProducts();
+                }
+            }) //{message:'', data:[]}
+            .catch(e => console.log(e));
+    }
+
+    componentDidMount() {
+        this.fetchProducts();
     }
     render() {
         let design = <span>products loading...</span>;
@@ -29,7 +42,9 @@ export class ProductContainer extends Component {
                         <h4>{this.state.products.length} Record(s) found...</h4>
                     </div>
                     <div className='panel panel-body'>
-                        <ProductTable productList={this.state.products} />
+                        <ProductTable
+                            productList={this.state.products}
+                            removeProduct={this.deleteProductHandler} />
                     </div>
                 </div>
             );
