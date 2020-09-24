@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './ProductRow.css'
+import { Link } from 'react-router-dom';
 
 function ProductRow({ product, remove }) {
     return (
         <tr>
             <td>
-                <a href="/products/{product.productId}">
+                <Link to={`products/${product.productId}`}>
                     <div className='img-responsive'>
 
                         <img
@@ -16,7 +17,7 @@ function ProductRow({ product, remove }) {
                             className='imageStyle'
                         />
                     </div>
-                </a>
+                </Link>
             </td>
             <td>{product.productName}</td>
             <td>{product.productCode}</td>

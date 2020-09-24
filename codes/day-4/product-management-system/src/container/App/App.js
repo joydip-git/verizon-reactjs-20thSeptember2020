@@ -13,9 +13,10 @@ function App() {
       <div className="App">
         <HeaderNav />
         <br />
+        <Route path='/' exact component={Home} />
         <Route path='/home' component={Home} />
         <Route path='/add' component={ProductAdd} />
-        <Route path='/products' component={ProductContainer} />
+        <Route path='/products' exact component={ProductContainer} />
         <Route path='/products/:id' component={ProductDetail} />
       </div>
     </BrowserRouter>
