@@ -1,0 +1,19 @@
+Routing:
+package: react-router-dom
+
+Router: BrowserRouter, HashRouter, MemoryRouter
+Router Matchers: <Route>, <Switch>
+Navigation: <Link>, <NavLink> and <Redirect>
+
+BrowserRouter:
+It uses HTML5 API: history API (pushState, replaceState, popState API)
+it routes as a normal URL in the browser
+forceRefresh props
+
+Link to = ''/{ { forceRefresh} }
+
+MemoryRouter: keeps the URL changes in the memory (NOT in the bowser)
+
+HashRouter:
+
+
