@@ -4,9 +4,7 @@ import App from './container/App/App';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Provider } from 'react-redux'
-import { createProductStore } from './redux/productStore'
-
-const productStore = createProductStore();
+import productStore from './redux/productStore'
 
 ReactDOM.render(
   <Provider store={productStore}>

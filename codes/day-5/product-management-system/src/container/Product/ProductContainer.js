@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ProductTable from '../../component/Product/ProductTable/ProductTable'
 import './ProductContainer.css'
 import { connect } from 'react-redux'
-import { fetchProductsAsync } from '../../redux/actions/getProductActions'
+import { fetchProductsAsync, getAllProductsInitiateActionCreator } from '../../redux/actions/getProductActions'
 
 export class ProductContainer extends Component {
 
@@ -45,7 +45,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getProducts: () => dispatch(fetchProductsAsync())
+        // getProducts: () => dispatch(fetchProductsAsync())
+        getProducts: () => dispatch(getAllProductsInitiateActionCreator())
     }
 }
 const connector = connect(mapStateToProps, mapDispatchToProps);
