@@ -1,34 +1,34 @@
 import * as GetProductActionTypes from '../actiontypes/getProductActionTypes'
 
 const initialState = {
-    product: null,
+    products: [],
     errorMessage: '',
     loading: true
 }
-export const getProductReducer = (state = initialState, action) => {
+export const getAllProductsReducer = (state = initialState, action) => {
     let newState = null;
     switch (action.type) {
-        case GetProductActionTypes.GET_PRODUCT_INITIATE:
+        case GetProductActionTypes.GET_ALL_PRODUCTS_INITIATE:
             newState = {
                 ...state,
                 loading: true,
-                product: null,
+                products: [],
                 errorMessage: ''
             }
             break;
-        case GetProductActionTypes.GET_PRODUCT_SUCCESS:
+        case GetProductActionTypes.GET_ALL_PRODUCTS_SUCCESS:
             newState = {
                 ...state,
                 loading: false,
-                product: action.payload,
+                products: action.payload,
                 errorMessage: ''
             }
             break;
-        case GetProductActionTypes.GET_PRODUCT_FAILURE:
+        case GetProductActionTypes.GET_ALL_PRODUCTS_FAILURE:
             newState = {
                 ...state,
                 loading: false,
-                product: null,
+                products: [],
                 errorMessage: action.payload
             }
             break;

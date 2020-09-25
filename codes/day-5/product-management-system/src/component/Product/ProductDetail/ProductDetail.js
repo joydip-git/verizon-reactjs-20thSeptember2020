@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { getProductById } from '../../../service/ProdudctService'
+import { fetchProductByIdAsync } from '../../../redux/actions/getProductActions'
+import { connect } from 'react-redux'
 
 class ProductDetail extends Component {
-    state = {
-        product: null,
-        redirect: false
-    }
+    // state = {
+    //     product: null,
+    //     redirect: false
+    // }
     componentDidMount() {
-        console.log('called')
-        getProductById(parseInt(this.props.match.params.id))
-            .then(resp => {
-                console.log(resp.data);
-                this.setState({ product: resp.data })
-            })
-            .catch(e => console.log(e))
+        this.props.getProductById(this.props.match.params.id);
     }
     componentWillUnmount() {
         console.log('destroyed...')
@@ -22,65 +18,38 @@ class ProductDetail extends Component {
     redirectHandler = () => {
         this.props.history.push('/products');
     }
-    redirectToProducts = () => {
-        if (this.state.redirect)
-            return <Redirect to='/products' />
-    }
+    // redirectToProducts = () => {
+    //     if (this.state.redirect)
+    //         return <Redirect to='/products' />
+    // }
     render() {
         console.log(this.props)
         return (
             <div>
-                {this.state.product === null ? <span>'loading'</span> : this.state.product.productName}
+                {this.props.loading ?
+                    <span>'loading...'</span>
+                    : this.props.product.productName
+                }
                 <br />
-                {/* <button onClick={this.redirectHandler}>OK</button> */}
-                <button onClick={() => this.setState({ redirect: true })}>OK</button>
-                {this.redirectToProducts()}
+                <button onClick={this.redirectHandler}>OK</button>
+                {/* <button onClick={() => this.setState({ redirect: true })}>OK</button>
+                {this.redirectToProducts()} */}
             </div>
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        product: state.productState.product,
+        loading: state.productState.loading,
+        errorMessage: state.productState.errorMessage
+    }
+}
 
-export default ProductDetail
-// function ProductDetail() {
-//     //console.log(props);
-//     const history = useHistory();
-//     console.log(history)
-//     const params = useParams();
-//     console.log(params)
-//     const location = useLocation();
-//     const [productState, setProductState] = useState({ product: null });
-//     const [redirectState, setRedirectState] = useState(false);
-//     useEffect(function () {
-//         console.log('called')
-//         getProductById(parseInt(params.id))
-//             .then(resp => {
-//                 console.log(resp.data);
-//                 setProductState({ product: resp.data })
-//             })
-//             .catch(e => console.log(e))
-//         return () => {
-//             console.log('destroyed...')
-//         }
-//     }, []);
-
-//     const redirectHandler = () => {
-//         history.push('/products');
-//     }
-//     const redirect = () => {
-//         if (redirectState)
-//             return <Redirect to='/products' />
-//     }
-//     return (
-//         <div>
-//             {productState.product === null ? <span>'loading'</span> : productState.product.productName}
-//             <br />
-//             {/* <button onClick={redirectHandler}>OK</button> */}
-// <button onClick={() => setRedirectState(true)}>Redirect</button>
-// { redirect() }
-
-//         </div >
-//     )
-// }
-
-// export default ProductDetail
-
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getProductById: (id) => dispatch(fetchProductByIdAsync(id))
+    }
+}
+const connector = connect(mapStateToProps, mapDispatchToProps);
+export default connector(ProductDetail);
